@@ -137,7 +137,8 @@ export default function Landing() {
   return (
     <div ref={pageRef} className="relative min-h-screen h-full bg-background text-foreground dark">
       <BackgroundRippleEffect
-        className="absolute inset-0 z-[1] [--cell-border-color:rgba(245,220,180,0.4)] [--cell-shadow-color:rgba(245,220,180,0.2)]"
+        className="fixed inset-0 z-[1] [--cell-border-color:rgba(245,220,180,0.55)] [--cell-shadow-color:rgba(245,220,180,0.35)] [&_.cell]:opacity-30 [&_.cell]:border-[0.4px]"
+        cellSize={48}
       />
       <Navbar />
 
@@ -154,7 +155,7 @@ export default function Landing() {
                   className="justify-center"
                   duration={2000}
                   textClassName="font-jakarta text-5xl md:text-7xl font-extrabold leading-tight text-center text-white"
-                  pillClassName="font-jakarta text-emerald-400 text-4xl md:text-6xl font-extrabold leading-tight text-center"
+                  pillClassName="font-jakarta !text-emerald-400 text-4xl md:text-6xl font-extrabold leading-tight text-center !bg-transparent !border-0 !ring-0 !shadow-none !rounded-none !px-0 !py-0"
                 />
                 <p className="mt-4 text-lg text-neutral-300 text-center max-w-3xl mx-auto">
                   Upload your workbook and instantly see incident trends, department performance,
@@ -307,7 +308,7 @@ export default function Landing() {
             <div className="mt-6">
               <Link
                 to="/dashboard"
-                className="inline-flex items-center justify-center rounded-full px-6 py-3 bg-emerald-600 text-white"
+                className="inline-flex items-center justify-center rounded-full px-6 py-3 bg-emerald-600 text-white transition duration-200 ease-out hover:bg-emerald-700 hover:scale-[1.03] hover:shadow-[0_8px_30px_rgba(16,185,129,0.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/70 active:scale-95"
               >
                 Go to Dashboard
               </Link>
@@ -317,7 +318,7 @@ export default function Landing() {
       </main>
 
       {/* Footer (rounded, dark, multi-column) */}
-      <footer className="relative z-10 mx-auto max-w-7xl px-6 py-10 pb-20">
+      <footer className="relative z-10 mx-auto max-w-7xl px-6 py-10 pb-8">
         <div className="rounded-3xl bg-[#1a1d22] border border-white/10 p-8 md:p-10 text-neutral-300">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
             {/* Brand + blurb */}
