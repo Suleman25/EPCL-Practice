@@ -1,0 +1,11 @@
+{
+  "name": "epcl-safety-dev-react-root",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node run-dev.mjs",
+    "dev:landing": "node serve-landing.mjs",
+    "dev:react": "npm run dev --prefix risk-viz-nexus"
+  }
+}
